@@ -5,9 +5,11 @@
 ## Compile generator
 ##
 
-SRC		=		src/my_main.c			\
-				src/game_view.c		\
-				src/init.c
+SRC		=		\
+			src/my_main.c			\
+			src/game_view.c			\
+			src/init.c				\
+			src/ani_bird.c
 
 NAME =	my_hunter
 

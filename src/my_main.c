@@ -21,8 +21,13 @@ static void if_click(GLOBAL_T *ALL)
 
 static void play (GLOBAL_T *ALL)
 {
+    bird_t *sprite = malloc(sizeof(bird_t));
+    init_bird(sprite);
+
     while (sfRenderWindow_isOpen(WINDOW)) {
         while (sfRenderWindow_pollEvent(WINDOW, &EVENT)) {
+            if (EVENT.key.code == sfKeyEscape)
+                sfRenderWindow_close(WINDOW);
             if (EVENT.type == sfEvtClosed) {
                 sfRenderWindow_close(WINDOW);
             }
@@ -32,7 +37,7 @@ static void play (GLOBAL_T *ALL)
                                     NULL);
         sfRenderWindow_drawSprite(WINDOW, IMG[1].sprite, NULL);
         sfRenderWindow_display(WINDOW);
-        bird_ani(ALL, 34, 100);
+        ani_bird(ALL, 34, 100);
 
         if_click(ALL);
     }
