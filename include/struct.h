@@ -27,6 +27,7 @@
     typedef struct IMG {
         sfTexture *texture;
         sfSprite *sprite;
+        sfIntRect rect;
         sfVector2f scale;
         sfVector2f pos;
         sfVector2f size;
@@ -37,6 +38,15 @@
         PARAMETER_T settings;
         IMG_T *pictures;
     } GLOBAL_T;
+
+    typedef struct //perso
+    {
+    sfIntRect rect;
+    sfTexture *texture;
+    sfVector2f scale;
+    sfSprite *sprite;
+    sfVector2f pos;
+    } bird_t;
 
     void game_function(GLOBAL_T *ALL);
     void init (GLOBAL_T *ALL);

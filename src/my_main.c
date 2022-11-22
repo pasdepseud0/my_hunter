@@ -28,8 +28,10 @@ static void play (GLOBAL_T *ALL)
             }
         }
         sfRenderWindow_clear(WINDOW, sfBlack);
-        sfRenderWindow_drawSprite(ALL->settings.window, ALL->pictures[0].sprite, NULL);
+        sfRenderWindow_drawSprite(ALL->settings.window, ALL->pictures[0].sprite,
+                                    NULL);
         sfRenderWindow_drawSprite(WINDOW, IMG[1].sprite, NULL);
+        // bird_ani(ALL, IMG[0].sprite, IMG[1].sprite);
         sfRenderWindow_display(WINDOW);
 
         if_click(ALL);

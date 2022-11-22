@@ -32,17 +32,17 @@ void init_sprite(GLOBAL_T *ALL)
     nb = 0;
     ALL->pictures = malloc(sizeof(ALL->pictures->sprite) * 100);
 
-    create_obj(ALL, "./assets/menu.jpg", 1.12, 1.12, 0, 0);
-    create_obj(ALL, "./assets/start-button.png", 10, 10, 800, 500);
-    create_obj(ALL, "./assets/floor.png", 3, 3, 0, 800);
-    create_obj(ALL, "./assets/floor.png", 3, 3, 2100, 800);
+    create_obj(ALL, "assets/menu.jpg", 1.12, 1.12, 0, 0);           //0
+    create_obj(ALL, "assets/start-button.png", 10, 10, 800, 500);   //1
+    create_obj(ALL, "assets/floor.png", 3, 3, 0, 800);              //2
+    create_obj(ALL, "assets/cloud.png", 0.75, 0.75, 2100, 100);     //3
+    create_obj(ALL, "assets/bird.png", 3, 3, 170, 750);         //4
 
-    ALL->pictures[nb].texture = sfTexture_createFromFile("./assets/bird.png", NULL);
     ALL->pictures[nb].sprite = sfSprite_create();
-    ALL->pictures[nb].scale.x = 1.5;
-    ALL->pictures[nb].scale.y = 1.5;
-    ALL->pictures[nb].pos.x = 170;
-    ALL->pictures[nb].pos.y = 750;
+    ALL->pictures[4].rect.height = 26;
+    ALL->pictures[4].rect.width = 34;
+    ALL->pictures[4].rect.left = 0;
+    ALL->pictures[4].rect.top = 0;
     ALL->pictures[nb].origin.x = 50;
     ALL->pictures[nb].origin.y = 50;
 }
@@ -52,8 +52,10 @@ void applied(GLOBAL_T *ALL)
     for (int i = 0; i <= nb; i++) {
         sfSprite_setPosition(ALL->pictures[i].sprite, ALL->pictures[i].pos);
         sfSprite_setScale(ALL->pictures[i].sprite, ALL->pictures[i].scale);
+        sfSprite_setTextureRect(ALL->pictures[4].sprite, ALL->pictures[4].rect);
         sfSprite_setOrigin(ALL->pictures[i].sprite, ALL->pictures[i].origin);
-        sfSprite_setTexture(ALL->pictures[i].sprite, ALL->pictures[i].texture, sfTrue);
+        sfSprite_setTexture(ALL->pictures[i].sprite, ALL->pictures[i].texture,
+                            sfTrue);
         mini_printf("sprite:%d:%f:%f:applied\n", i, ALL->pictures[i].pos.x, ALL->pictures[i].pos.y);
     }
 }

@@ -16,20 +16,28 @@ void draw(GLOBAL_T *ALL)
     sfRenderWindow_display(WINDOW);
 }
 
-// static void jump (GLOBAL_T *ALL)
+static void jump (GLOBAL_T *ALL)
+{
+    if (EVENT.type == sfEvtMouseButtonPressed && IMG[4].pos.y == 750) {
+        IMG[4].pos.y = 500;
+        sfSprite_setPosition(IMG[4].sprite, IMG[4].pos);
+    } else if (IMG[4].pos.y != 750) {
+        IMG[4].pos.y += 2;
+        sfSprite_setPosition(IMG[4].sprite, IMG[4].pos);
+    }
+}
+
+// static void bird_ani(GLOBAL_T *ALL, int offset, int max_value)
 // {
-//     if (EVENT.type == sfEvtMouseButtonPressed && IMG[4].pos.y == 750) {
-//         IMG[4].pos.y = 500;
-//         sfSprite_setPosition(IMG[4].sprite, IMG[4].pos);
-//     } else if (IMG[4].pos.y != 750) {
-//         IMG[4].pos.y += 2;
-//         sfSprite_setPosition(IMG[4].sprite, IMG[4].pos);
-//     }
+//     if (ALL->pictures->rect.left + offset >= max_value)
+//         ALL->pictures->rect.left = 0;
+//     else
+//         ALL->pictures->rect.left += offset;
 // }
 
 static floor_animation(GLOBAL_T *ALL)
 {
-    IMG[2].pos.x = IMG[2].pos.x - 1;
+    // IMG[2].pos.x = IMG[2].pos.x - 1;
     IMG[3].pos.x = IMG[3].pos.x - 2;
     sfSprite_setPosition(IMG[2].sprite, IMG[2].pos);
     if (IMG[2].pos.x <= -2100)
@@ -41,7 +49,7 @@ static floor_animation(GLOBAL_T *ALL)
 
 void game_function(GLOBAL_T *ALL)
 {
-    float orientation = 35;
+    // float orientation = 35;
     sfWindow_setFramerateLimit(WINDOW, 100);
 
     while (sfRenderWindow_isOpen(WINDOW)) {
@@ -50,10 +58,10 @@ void game_function(GLOBAL_T *ALL)
                 sfRenderWindow_close(WINDOW);
             }
         }
-        orientation++;
-        sfSprite_setRotation(IMG[4].sprite, orientation);
+        // orientation++;
+        // sfSprite_setRotation(IMG[4].sprite, orientation);
         draw(ALL);
-        // jump(ALL);
+        jump(ALL);
         floor_animation(ALL);
     }
 }
