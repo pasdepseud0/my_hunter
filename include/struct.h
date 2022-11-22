@@ -39,17 +39,9 @@
         IMG_T *pictures;
     } GLOBAL_T;
 
-    typedef struct //perso
-    {
-    sfIntRect rect;
-    sfTexture *texture;
-    sfVector2f scale;
-    sfSprite *sprite;
-    sfVector2f pos;
-    } bird_t;
-
     void game_function(GLOBAL_T *ALL);
     void init (GLOBAL_T *ALL);
+    void bird_ani(GLOBAL_T *ALL, int offset, int max_value);
 
     #define sfCf sfTexture_createFromFile
     #define sfWc sfRenderWindow_create

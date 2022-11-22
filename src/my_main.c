@@ -31,8 +31,8 @@ static void play (GLOBAL_T *ALL)
         sfRenderWindow_drawSprite(ALL->settings.window, ALL->pictures[0].sprite,
                                     NULL);
         sfRenderWindow_drawSprite(WINDOW, IMG[1].sprite, NULL);
-        // bird_ani(ALL, IMG[0].sprite, IMG[1].sprite);
         sfRenderWindow_display(WINDOW);
+        bird_ani(ALL->pictures[4].sprite, 34, 100);
 
         if_click(ALL);
     }
