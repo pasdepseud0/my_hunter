@@ -32,7 +32,7 @@ static void play (GLOBAL_T *ALL)
                                     NULL);
         sfRenderWindow_drawSprite(WINDOW, IMG[1].sprite, NULL);
         sfRenderWindow_display(WINDOW);
-        bird_ani(ALL->pictures[4].sprite, 34, 100);
+        bird_ani(ALL, 34, 100);
 
         if_click(ALL);
     }

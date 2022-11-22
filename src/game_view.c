@@ -35,9 +35,8 @@ void bird_ani(GLOBAL_T *ALL, int offset, int max_value)
         ALL->pictures->rect.left += offset;
 }
 
-static floor_animation(GLOBAL_T *ALL)
+static void floor_animation(GLOBAL_T *ALL)
 {
-    // IMG[2].pos.x = IMG[2].pos.x - 1;
     IMG[3].pos.x = IMG[3].pos.x - 2;
     sfSprite_setPosition(IMG[2].sprite, IMG[2].pos);
     if (IMG[2].pos.x <= -2100)
