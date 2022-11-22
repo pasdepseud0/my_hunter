@@ -27,14 +27,6 @@ static void jump (GLOBAL_T *ALL)
     }
 }
 
-void bird_ani(GLOBAL_T *ALL, int offset, int max_value)
-{
-    if (ALL->pictures->rect.left + offset >= max_value)
-        ALL->pictures->rect.left = 0;
-    else
-        ALL->pictures->rect.left += offset;
-}
-
 static void floor_animation(GLOBAL_T *ALL)
 {
     IMG[3].pos.x = IMG[3].pos.x - 2;
