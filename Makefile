@@ -11,17 +11,21 @@ SRC		=		\
 			src/init.c				\
 			src/ani_bird.c
 
-NAME =	my_hunter
+NAME 	=	my_hunter
 
-OBJ =	$(SRC:.c=.o)
+OBJ 	=	$(SRC:.c=.o)
 
-CFLAGS = -Wall -Wextra -I include
+CFLAGS 	= -Wall -Wextra -I include
+
+LIB		= -L lib/my -lmy
+
+CSFML	=	-lcsfml-graphics -lcsfml-system -lcsfml-audio -lcsfml-window
 
 all: 	$(NAME)
 
 $(NAME): $(OBJ)
 	make -C lib/my
-	gcc $(OBJ) -o $(NAME) -L lib/my -lmy -lcsfml-graphics -lcsfml-system -lcsfml-audio -lcsfml-window
+	gcc $(OBJ) -o $(NAME) $(LIB) $(CSFML)
 
 clean:
 	make clean -C lib/my/
