@@ -56,7 +56,7 @@ void applied(GLOBAL_T *ALL)
         sfSprite_setOrigin(ALL->pictures[i].sprite, ALL->pictures[i].origin);
         sfSprite_setTexture(ALL->pictures[i].sprite, ALL->pictures[i].texture,
                             sfTrue);
-        mini_printf("sprite:%d:%f:%f:applied\n", i, ALL->pictures[i].pos.x, ALL->pictures[i].pos.y);
+        printf("sprite:%d:%f:%f:applied\n", i, ALL->pictures[i].pos.x, ALL->pictures[i].pos.y);
     }
 }
 
