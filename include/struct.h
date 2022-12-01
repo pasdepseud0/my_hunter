@@ -19,7 +19,7 @@
 
     typedef struct PARAMETER {
         sfVideoMode mode;
-        sfRenderWindow* window;
+        sfRenderWindow *window;
         sfEvent event;
         int img_n;
     } PARAMETER_T;
@@ -34,14 +34,6 @@
         sfVector2f origin;
     } IMG_T;
 
-    typedef struct {
-    sfIntRect rect;
-    sfTexture *texture;
-    sfVector2f scale;
-    sfSprite *chara;
-    sfVector2f pos;
-    } bird_t;
-
     typedef struct GLOBAL {
         PARAMETER_T settings;
         IMG_T *pictures;
@@ -52,7 +44,10 @@
 
     void init_bird(GLOBAL_T *ALL);
     void disp_bird(GLOBAL_T *ALL);
+    void evt_close_window(GLOBAL_T *ALL);
     void ani_bird(GLOBAL_T *ALL, int offset, int max_value);
+    void create_obj(GLOBAL_T *ALL, char *str, double sx, double sy, double px,
+                double py);
 
     #define sfCf sfTexture_createFromFile
     #define sfWc sfRenderWindow_create

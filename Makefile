@@ -9,7 +9,9 @@ SRC		=		\
 			src/my_main.c			\
 			src/game_view.c			\
 			src/init.c				\
-			src/ani_bird.c
+			src/ani_bird.c			\
+			# src/create_object.c		\
+			# src/evt_close_win.c
 
 NAME 	=	my_hunter
 
