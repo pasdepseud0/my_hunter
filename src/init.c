@@ -5,7 +5,8 @@
 ** desc
 */
 
-#include "all_lib.h"
+#include "my.h"
+#include "struct.h"
 
 void init_window(GLOBAL_T *ALL)
 {

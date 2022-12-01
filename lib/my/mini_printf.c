@@ -6,7 +6,6 @@
 */
 #include <stdio.h>
 #include <stdarg.h>
-#include "mini_printf.h"
 #include "my.h"
 
 void format_percent(char typ, va_list *ap)

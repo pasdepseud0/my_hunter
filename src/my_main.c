@@ -5,7 +5,8 @@
 ** desc
 */
 
-#include "all_lib.h"
+#include "my.h"
+#include "struct.h"
 
 static void if_click(GLOBAL_T *ALL)
 {
@@ -34,7 +35,6 @@ static void play (GLOBAL_T *ALL)
                                     NULL);
         sfRenderWindow_drawSprite(WINDOW, IMG[1].sprite, NULL);
         if_click(ALL);
-        // ani_bird(IMG[4].sprite, 34, 100);
         sfRenderWindow_display(WINDOW);
     }
 }

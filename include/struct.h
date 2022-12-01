@@ -9,6 +9,7 @@
     # define STRUCT_H_
 
     #include <stdio.h>
+    #include "my.h"
     #include "struct.h"
     #include <stdlib.h>
     #include <SFML/System.h>

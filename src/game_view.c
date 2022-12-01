@@ -5,7 +5,8 @@
 ** desc
 */
 
-#include "all_lib.h"
+#include "my.h"
+#include "struct.h"
 
 void draw(GLOBAL_T *ALL)
 {
@@ -55,4 +56,12 @@ void bird_flip(GLOBAL_T *ALL)
         jump(ALL);
         floor_animation(ALL);
     }
+}
+
+void ani_bird(GLOBAL_T *ALL, int offset, int max_value)
+{
+    if (IMG->rect.left + offset >= max_value)
+        IMG->rect.left = 0;
+    else
+        IMG->rect.left += offset;
 }
